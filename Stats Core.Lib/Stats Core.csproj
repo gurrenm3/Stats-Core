@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CC1F3DF-8D63-46B7-B8A6-EEEC3D24ABA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stats_Core</RootNamespace>
+    <AssemblyName>Stats Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass_publicized">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\publicized_assemblies\Assembly-CSharp-firstpass_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp_publicized">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\publicized_assemblies\Assembly-CSharp_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="QModInstaller">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\BepInEx\plugins\QModManager\QModInstaller.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Stats\equiptment\HeatBlade.cs" />
+    <Compile Include="Stats\equiptment\Knife.cs" />
+    <Compile Include="Stats\equiptment\LaserCutter.cs" />
+    <Compile Include="Events\Player Events.cs" />
+    <Compile Include="Extensions\DamageInfoExt.cs" />
+    <Compile Include="Extensions\equiptment\FireExtinguisher.cs" />
+    <Compile Include="Extensions\equiptment\FlareExt.cs" />
+    <Compile Include="Extensions\equiptment\FlashlightExt.cs" />
+    <Compile Include="Extensions\equiptment\HeatBladeExt.cs" />
+    <Compile Include="Extensions\equiptment\KnifeExt.cs" />
+    <Compile Include="Extensions\equiptment\LaserCutterExt.cs" />
+    <Compile Include="Extensions\LiveMixinExt.cs" />
+    <Compile Include="Extensions\OxygenMgrExt.cs" />
+    <Compile Include="Extensions\PlayerExt.cs" />
+    <Compile Include="Extensions\survival\FoodExt.cs" />
+    <Compile Include="Extensions\survival\SurvivalExt.cs" />
+    <Compile Include="Extensions\survival\WaterExt.cs" />
+    <Compile Include="Guard.cs" />
+    <Compile Include="Patches\BaseTranspilerPatch.cs" />
+    <Compile Include="Patches\equiptment\heatBlade\GetUsesPerHit.cs" />
+    <Compile Include="Patches\equiptment\knife\GetUsesPerHit.cs" />
+    <Compile Include="Patches\equiptment\knife\GiveResourceOnDamage.cs" />
+    <Compile Include="Patches\equiptment\laserCutter\RandomizeIntensity.cs" />
+    <Compile Include="Patches\equiptment\laserCutter\StartLaserCuttingFX.cs" />
+    <Compile Include="Patches\liveMixin\HealTempDamage.cs" />
+    <Compile Include="Patches\survival\Eat.cs" />
+    <Compile Include="Patches\survival\GetWeaknessSpeedScalar.cs" />
+    <Compile Include="Patches\survival\OnHealTempDamage.cs" />
+    <Compile Include="Patches\survival\Reset.cs" />
+    <Compile Include="Patches\survival\UpdateHunger.cs" />
+    <Compile Include="Patches\uGui_FoodBar\LateUpdate.cs" />
+    <Compile Include="Patches\uGui_FoodBar\OnEat.cs" />
+    <Compile Include="Patches\uGui_FoodBar\SetValue.cs" />
+    <Compile Include="Patches\uGui_HealthBar\OnHealDamage.cs" />
+    <Compile Include="Patches\uGui_WaterBar\OnDrink.cs" />
+    <Compile Include="Patches\uGui_WaterBar\SetValue.cs" />
+    <Compile Include="Stats\player\Food.cs" />
+    <Compile Include="Stats\player\movementData\EnvironmentType.cs" />
+    <Compile Include="Stats\player\movementData\MovementData.cs" />
+    <Compile Include="Stats\player\movementData\MovementType.cs" />
+    <Compile Include="Stats\player\movementData\StructureType.cs" />
+    <Compile Include="Stats\player\movementData\VehicleType.cs" />
+    <Compile Include="Stats\player\Water.cs" />
+    <Compile Include="QModPatcher.cs" />
+    <Compile Include="Patches\MainMenu.cs" />
+    <Compile Include="Patches\player\GetBreathPeriod.cs" />
+    <Compile Include="Patches\player\GetOxygenPerBreath.cs" />
+    <Compile Include="Patches\player\OnTakeDamage.cs" />
+    <Compile Include="Patches\player\Update.cs" />
+    <Compile Include="Patches\survival\UpdateStats.cs" />
+    <Compile Include="Stats\player\Air.cs" />
+    <Compile Include="Stats\player\DamageTypeResistance.cs" />
+    <Compile Include="Stats\player\Health.cs" />
+    <Compile Include="Stats\player\Movement.cs" />
+    <Compile Include="Stats\player\survival.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stat Handlers\DamageResistanceHandler.cs" />
+    <Compile Include="TempMod.cs" />
+    <Compile Include="Stats\Vehicles\Cyclops.cs" />
+    <Compile Include="Stat Handlers\HealthRegenHandler.cs" />
+    <Compile Include="Stats\Vehicles\Prawn.cs" />
+    <Compile Include="Stats\Vehicles\Seaglide.cs" />
+    <Compile Include="Stats\Vehicles\Seamoth.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "F:\Program Files\Epic Games\Subnautica\QMods\Stats Core\$(TargetFileName)" /y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
