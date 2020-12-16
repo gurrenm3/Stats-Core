@@ -56,11 +56,23 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\equiptment\AirBladderExt.cs" />
+    <Compile Include="Extensions\equiptment\BuilderToolExt.cs" />
+    <Compile Include="Patches\equiptment\airBladder\ApplyBuoyancyForce.cs" />
+    <Compile Include="Patches\equiptment\airBladder\OnEnable.cs" />
+    <Compile Include="Patches\equiptment\airBladder\UpdateInflateState.cs" />
+    <Compile Include="Patches\equiptment\builderTool\HandleInput.cs" />
+    <Compile Include="Patches\liveMixin\TakeDamage.cs" />
+    <Compile Include="Stats\equiptment\AirBladder.cs" />
+    <Compile Include="Stats\equiptment\BuilderTool.cs" />
     <Compile Include="Stats\equiptment\HeatBlade.cs" />
     <Compile Include="Stats\equiptment\Knife.cs" />
     <Compile Include="Stats\equiptment\LaserCutter.cs" />
@@ -85,7 +97,6 @@
     <Compile Include="Patches\equiptment\knife\GiveResourceOnDamage.cs" />
     <Compile Include="Patches\equiptment\laserCutter\RandomizeIntensity.cs" />
     <Compile Include="Patches\equiptment\laserCutter\StartLaserCuttingFX.cs" />
-    <Compile Include="Patches\liveMixin\HealTempDamage.cs" />
     <Compile Include="Patches\survival\Eat.cs" />
     <Compile Include="Patches\survival\GetWeaknessSpeedScalar.cs" />
     <Compile Include="Patches\survival\OnHealTempDamage.cs" />
@@ -104,7 +115,7 @@
     <Compile Include="Stats\player\movementData\StructureType.cs" />
     <Compile Include="Stats\player\movementData\VehicleType.cs" />
     <Compile Include="Stats\player\Water.cs" />
-    <Compile Include="QModPatcher.cs" />
+    <Compile Include="Patches\QModPatcher.cs" />
     <Compile Include="Patches\MainMenu.cs" />
     <Compile Include="Patches\player\GetBreathPeriod.cs" />
     <Compile Include="Patches\player\GetOxygenPerBreath.cs" />

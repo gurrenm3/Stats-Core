@@ -3,7 +3,7 @@ using HarmonyLib;
 using Stats_Core.Events;
 using QModManager.API.ModLoading;
 
-namespace Stats_Core
+namespace Stats_Core.Patches
 {
     [QModCore]
     public static class QModPatcher

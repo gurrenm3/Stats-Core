@@ -3,12 +3,17 @@
     public static class FireExtinguisherExt
     {
         public static float GetExpendFuelPerSecond(this FireExtinguisher fireExtinguisher) => fireExtinguisher.expendFuelPerSecond;
-        public static void SetExpendFuelPerSecond(this FireExtinguisher fireExtinguisher, float newAmount) => 
-            fireExtinguisher.expendFuelPerSecond = newAmount;
+        public static void AddExpendFuelPerSecond(this FireExtinguisher fireExtinguisher, float amount) => 
+            fireExtinguisher.expendFuelPerSecond += amount;
+        public static void SubtractExpendFuelPerSecond(this FireExtinguisher fireExtinguisher, float amount) =>
+            fireExtinguisher.expendFuelPerSecond -= amount;
 
 
         public static float GetFireDousePerSecond(this FireExtinguisher fireExtinguisher) => fireExtinguisher.fireDousePerSecond;
-        public static void SetFireDousePerSecond(this FireExtinguisher fireExtinguisher, float newAmount) => fireExtinguisher.fireDousePerSecond = newAmount;
+        public static void AddFireDousePerSecond(this FireExtinguisher fireExtinguisher, float amount) =>
+            fireExtinguisher.fireDousePerSecond += amount;
+        public static void SubtractFireDousePerSecond(this FireExtinguisher fireExtinguisher, float amount) =>
+            fireExtinguisher.fireDousePerSecond -= amount;
 
 
         public static Fire GetFireTarget(this FireExtinguisher fireExtinguisher) => fireExtinguisher.fireTarget;

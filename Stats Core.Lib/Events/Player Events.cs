@@ -2,6 +2,9 @@
 
 namespace Stats_Core.Events
 {
+	/// <summary>
+	/// This class is used for testing purposes and not apart of the official API
+	/// </summary>
 	internal class Player_Events
     {
 		public static event EventHandler<PlayerEventArgs> PlayerUpdated;
