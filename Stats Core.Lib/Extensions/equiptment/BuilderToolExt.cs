@@ -3,6 +3,9 @@ using static Stats_Core.Stats.equiptment.BuilderTool;
 
 namespace Stats_Core.Extensions
 {
+    /// <summary>
+    /// Extension methods for <see cref="BuilderTool"/>.
+    /// </summary>
     public static class BuilderToolExt
     {
         public static string GetDeconstructionText(this BuilderTool builderTool) => builderTool.deconstructText;

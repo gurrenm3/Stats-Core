@@ -1,14 +1,11 @@
 ﻿using HarmonyLib;
-using Stats_Core.Events;
 using Stats_Core.Extensions;
 using Stats_Core.Stat_Handlers;
-using Stats_Core.Vehicles;
-using static Stats_Core.Events.Player_Events;
 
-namespace Stats_Core.Patches.player
+namespace Stats_Core.Patches
 {
 	[HarmonyPatch(typeof(Player), nameof(Player.Update))]
-	internal class Player_Update_Patch
+	internal class Player_Update
 	{
 		private static HealthRegenHandler healthRegenHandler = new HealthRegenHandler();
 
@@ -29,12 +26,6 @@ namespace Stats_Core.Patches.player
 				return;
 
 			ResetSurvivalForNewborn(__instance);
-
-			PlayerEventArgs args = new PlayerEventArgs();
-			args.Player = __instance;
-
-			Player_Events playerStats = new Player_Events();
-			playerStats.OnPlayerUpdated(args);
 
 			/*if (__instance.motorMode == Player.MotorMode.Seaglide)
 			{

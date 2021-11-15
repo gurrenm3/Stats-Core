@@ -1,10 +1,10 @@
 ﻿using HarmonyLib;
 using Stats_Core.Extensions;
 
-namespace Stats_Core.Patches.uGui_FoodBar
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(uGUI_FoodBar), nameof(uGUI_FoodBar.SetValue))]
-    internal class uGUIFoodBar_SetValue_Hook
+    internal class uGUIFoodBar_SetValue
     {
         [HarmonyPrefix]
         public static bool Prefix(uGUI_FoodBar __instance, ref float capacity)

@@ -5,6 +5,7 @@ namespace Stats_Core.Stat_Handlers
     internal class DamageResistanceHandler
     {
 		private LiveMixin liveMixin = Player.main.liveMixin;
+
 		internal void ApplyDamageResistance(DamageInfo damageInfo)
 		{
 			float percentToIgnore = GetAmountToIgnore(damageInfo);
@@ -28,7 +29,7 @@ namespace Stats_Core.Stat_Handlers
 
 		private float GetAmountToIgnore(DamageInfo damageInfo)
         {
-			float resistanceAmount = damageInfo.GetDamageTypeResistance();
+			float resistanceAmount = damageInfo.GetResistance();
 			float percentToIgnore = resistanceAmount / liveMixin.maxHealth;
 			return percentToIgnore;
 		}

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches.uGui_FoodBar
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(uGUI_FoodBar), nameof(uGUI_FoodBar.LateUpdate))]
-    internal class uGUIFoodBar_LateUpdate_Hook
+    internal class uGUIFoodBar_LateUpdate
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -19,7 +19,7 @@ namespace Stats_Core.Patches.uGui_FoodBar
                 if (!transpiler.IsCurrentInstructionGood(i))
                     continue;
 
-                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIFoodBar_LateUpdate_Hook>(nameof(GetMaxFood));
+                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIFoodBar_LateUpdate>(nameof(GetMaxFood));
 
                 const int offsetToInstruction = 1;
                 codeInstructions[i + offsetToInstruction] = newInstruction;

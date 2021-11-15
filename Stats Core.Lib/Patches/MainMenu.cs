@@ -3,7 +3,7 @@
 namespace Stats_Core.Patches
 {
 	[HarmonyPatch(typeof(MainMenuController), nameof(MainMenuController.Start))]
-	internal class MainMenuController_Start_Hook
+	internal class MainMenuController_Start
 	{
 		[HarmonyPrefix]
 		internal static bool Prefix()

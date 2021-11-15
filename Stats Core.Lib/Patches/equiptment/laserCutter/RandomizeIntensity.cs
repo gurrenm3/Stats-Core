@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches.equiptment.laserCutter
+namespace Stats_Core.Patches
 {
 	[HarmonyPatch(typeof(LaserCutter), nameof(LaserCutter.RandomizeIntensity))]
-	internal class LaserCutter_RandomizeIntensity_Patch
+	internal class LaserCutter_RandomizeIntensity
 	{
 		[HarmonyPostfix]
 		internal static void PostFix(LaserCutter __instance)

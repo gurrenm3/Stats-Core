@@ -1,10 +1,10 @@
 ﻿using HarmonyLib;
 using Stats_Core.Extensions;
 
-namespace Stats_Core.Patches.uGui_WaterBar
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(uGUI_WaterBar), nameof(uGUI_WaterBar.SetValue))]
-    internal class uGUIWaterBar_SetValue_Hook
+    internal class uGUIWaterBar_SetValue
     {
         [HarmonyPrefix]
         public static bool Prefix(uGUI_WaterBar __instance, ref float capacity)

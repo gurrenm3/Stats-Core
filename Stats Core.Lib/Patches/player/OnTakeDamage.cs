@@ -1,18 +1,17 @@
 ﻿using HarmonyLib;
 using Stats_Core.Stat_Handlers;
 using UnityEngine;
-using Stats_Core.Events;
 using Stats_Core.Extensions;
-using static Stats_Core.Events.Player_Events;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches.player
+namespace Stats_Core.Patches
 {
 	[HarmonyPatch(typeof(Player), nameof(Player.OnTakeDamage))]
-	internal class Player_OnTakeDamage_Patch
+	internal class Player_OnTakeDamage
 	{
-        private static DamageResistanceHandler damageResistanceHandler;
+        private static DamageResistanceHandler damageResistanceHandler = new DamageResistanceHandler();
+        private static Player playerInstance;
 
         [HarmonyPrefix]
         internal static bool Prefix(Player __instance, DamageInfo damageInfo)
@@ -20,8 +19,7 @@ namespace Stats_Core.Patches.player
             if (Guard.IsGamePaused())
                 return true;
 
-            if (damageResistanceHandler is null)
-                damageResistanceHandler = new DamageResistanceHandler();
+            playerInstance = __instance;
 
             damageResistanceHandler.ApplyDamageResistance(damageInfo);
             return true;
@@ -33,13 +31,6 @@ namespace Stats_Core.Patches.player
         {
             if (Guard.IsGamePaused())
                 return;
-
-            var args = new PlayerEventArgs();
-            args.Player = __instance;
-            args.damageInfo = damageInfo;
-
-            Player_Events stats = new Player_Events();
-            stats.OnDamageTaken(args);
 
             HealthRegenHandler.healthRegen_Delay_AfterDamage = Time.time + __instance.liveMixin.GetHealthRegenDelay_AfterDamage();
         }
@@ -56,8 +47,7 @@ namespace Stats_Core.Patches.player
                 if (!maxHealthTranspiler.IsCurrentInstructionGood(i))
                     continue;
 
-                codeInstructions[i] = maxHealthTranspiler.CreateNewCodeInstruction<Player_OnTakeDamage_Patch>
-                        (nameof(GetDamagePercentOfMaxHealth));
+                codeInstructions[i] = maxHealthTranspiler.CreateNewCodeInstruction<Player_OnTakeDamage>(nameof(GetHealthPercent));
 
                 break;
             }
@@ -65,7 +55,7 @@ namespace Stats_Core.Patches.player
             return codeInstructions;
         }
 
-        public static float GetDamagePercentOfMaxHealth(float damage, float oldMaxHealth)
+        public static float GetHealthPercent(float damage, float oldMaxHealth)
         {
             var newMaxHealth = (Player.main.liveMixin is null) ? 100f : Player.main.liveMixin.maxHealth;
             return damage / newMaxHealth;

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches.equiptment.builderTool
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(BuilderTool), nameof(BuilderTool.HandleInput))]
-    internal class BuilderTool_HandleInput_Hook
+    internal class BuilderTool_HandleInput
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -19,7 +19,7 @@ namespace Stats_Core.Patches.equiptment.builderTool
                 if (!getTargetTranspiler.IsCurrentInstructionGood(i))
                     continue;
 
-                codeInstructions[i] = getTargetTranspiler.CreateNewCodeInstruction<BuilderTool_HandleInput_Hook>
+                codeInstructions[i] = getTargetTranspiler.CreateNewCodeInstruction<BuilderTool_HandleInput>
                         (nameof(GetTargetCustomRange));
                 break;
             }

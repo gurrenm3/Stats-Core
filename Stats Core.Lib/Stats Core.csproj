@@ -7,7 +7,7 @@
     <ProjectGuid>{1CC1F3DF-8D63-46B7-B8A6-EEEC3D24ABA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Stats_Core</RootNamespace>
+    <RootNamespace>StatsCore</RootNamespace>
     <AssemblyName>Stats Core</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\Stats Core.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -62,15 +63,21 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>F:\Program Files\Epic Games\Subnautica\Subnautica_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\CreatureDeathExt.cs" />
+    <Compile Include="Extensions\CreatureExt.cs" />
     <Compile Include="Extensions\equiptment\AirBladderExt.cs" />
     <Compile Include="Extensions\equiptment\BuilderToolExt.cs" />
-    <Compile Include="Patches\equiptment\airBladder\ApplyBuoyancyForce.cs" />
-    <Compile Include="Patches\equiptment\airBladder\OnEnable.cs" />
-    <Compile Include="Patches\equiptment\airBladder\UpdateInflateState.cs" />
-    <Compile Include="Patches\equiptment\builderTool\HandleInput.cs" />
-    <Compile Include="Patches\liveMixin\TakeDamage.cs" />
+    <Compile Include="Extensions\vehicles\SeaglideExt.cs" />
+    <Compile Include="Patches\Equiptment\AirBladder\ApplyBuoyancyForce.cs" />
+    <Compile Include="Patches\Equiptment\AirBladder\OnEnable.cs" />
+    <Compile Include="Patches\Equiptment\AirBladder\UpdateInflateState.cs" />
+    <Compile Include="Patches\Equiptment\BuilderTool\HandleInput.cs" />
+    <Compile Include="Patches\LiveMixin\TakeDamage.cs" />
     <Compile Include="Stats\equiptment\AirBladder.cs" />
     <Compile Include="Stats\equiptment\BuilderTool.cs" />
     <Compile Include="Stats\equiptment\HeatBlade.cs" />
@@ -92,16 +99,16 @@
     <Compile Include="Extensions\survival\WaterExt.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="Patches\BaseTranspilerPatch.cs" />
-    <Compile Include="Patches\equiptment\heatBlade\GetUsesPerHit.cs" />
-    <Compile Include="Patches\equiptment\knife\GetUsesPerHit.cs" />
-    <Compile Include="Patches\equiptment\knife\GiveResourceOnDamage.cs" />
-    <Compile Include="Patches\equiptment\laserCutter\RandomizeIntensity.cs" />
-    <Compile Include="Patches\equiptment\laserCutter\StartLaserCuttingFX.cs" />
-    <Compile Include="Patches\survival\Eat.cs" />
-    <Compile Include="Patches\survival\GetWeaknessSpeedScalar.cs" />
-    <Compile Include="Patches\survival\OnHealTempDamage.cs" />
-    <Compile Include="Patches\survival\Reset.cs" />
-    <Compile Include="Patches\survival\UpdateHunger.cs" />
+    <Compile Include="Patches\Equiptment\HeatBlade\GetUsesPerHit.cs" />
+    <Compile Include="Patches\Equiptment\Knife\GetUsesPerHit.cs" />
+    <Compile Include="Patches\Equiptment\Knife\GiveResourceOnDamage.cs" />
+    <Compile Include="Patches\Equiptment\LaserCutter\RandomizeIntensity.cs" />
+    <Compile Include="Patches\Equiptment\LaserCutter\StartLaserCuttingFX.cs" />
+    <Compile Include="Patches\Survival\Eat.cs" />
+    <Compile Include="Patches\Survival\GetWeaknessSpeedScalar.cs" />
+    <Compile Include="Patches\Survival\OnHealTempDamage.cs" />
+    <Compile Include="Patches\Survival\Reset.cs" />
+    <Compile Include="Patches\Survival\UpdateHunger.cs" />
     <Compile Include="Patches\uGui_FoodBar\LateUpdate.cs" />
     <Compile Include="Patches\uGui_FoodBar\OnEat.cs" />
     <Compile Include="Patches\uGui_FoodBar\SetValue.cs" />
@@ -117,11 +124,11 @@
     <Compile Include="Stats\player\Water.cs" />
     <Compile Include="Patches\QModPatcher.cs" />
     <Compile Include="Patches\MainMenu.cs" />
-    <Compile Include="Patches\player\GetBreathPeriod.cs" />
-    <Compile Include="Patches\player\GetOxygenPerBreath.cs" />
-    <Compile Include="Patches\player\OnTakeDamage.cs" />
-    <Compile Include="Patches\player\Update.cs" />
-    <Compile Include="Patches\survival\UpdateStats.cs" />
+    <Compile Include="Patches\Player\GetBreathPeriod.cs" />
+    <Compile Include="Patches\Player\GetOxygenPerBreath.cs" />
+    <Compile Include="Patches\Player\OnTakeDamage.cs" />
+    <Compile Include="Patches\Player\Update.cs" />
+    <Compile Include="Patches\Survival\UpdateStats.cs" />
     <Compile Include="Stats\player\Air.cs" />
     <Compile Include="Stats\player\DamageTypeResistance.cs" />
     <Compile Include="Stats\player\Health.cs" />

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches.uGui_HealthBar
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(uGUI_HealthBar), nameof(uGUI_HealthBar.OnHealDamage))]
-    internal class uGUIHealthBar_OnHealDamage_Hook
+    internal class uGUIHealthBar_OnHealDamage
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -20,7 +20,7 @@ namespace Stats_Core.Patches.uGui_HealthBar
                 if (!transpiler.IsCurrentInstructionGood(i))
                     continue;
 
-                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIHealthBar_OnHealDamage_Hook>(nameof(GetMaxScale));
+                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIHealthBar_OnHealDamage>(nameof(GetMaxScale));
                 codeInstructions[i] = newInstruction;
                 break;
             }

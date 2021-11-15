@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches.uGui_WaterBar
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(uGUI_WaterBar), nameof(uGUI_WaterBar.OnDrink))]
-    internal class uGUIWaterBar_OnDrink_Hook
+    internal class uGUIWaterBar_OnDrink
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -20,7 +20,7 @@ namespace Stats_Core.Patches.uGui_WaterBar
                 if (!transpiler.IsCurrentInstructionGood(i))
                     continue;
 
-                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIWaterBar_OnDrink_Hook>(nameof(GetCurrentWater));
+                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIWaterBar_OnDrink>(nameof(GetCurrentWater));
                 codeInstructions[i] = newInstruction;
                 break;
             }

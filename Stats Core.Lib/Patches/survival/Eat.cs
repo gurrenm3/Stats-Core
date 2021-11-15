@@ -2,18 +2,19 @@
 using Stats_Core.Extensions;
 using UnityEngine;
 
-
-namespace Stats_Core.Patches.survival
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.Eat))]
-    internal class Survival_Eat_Hook
+    internal class Survival_Eat
     {
         internal static bool flag;
+
         #region Patches
+
         [HarmonyPrefix]
         internal static bool Prefix(Survival __instance, GameObject useObj)
         {
-            var patch = new Survival_Eat_Hook();
+            var patch = new Survival_Eat();
             patch.NewPrefixPatch(__instance, useObj);
             return false;
         }
@@ -23,9 +24,14 @@ namespace Stats_Core.Patches.survival
         {
             __result = flag;
         }
+
         #endregion
 
-
+		/// <summary>
+		/// This is a copy paste of the original <see cref="Survival.Eat(GameObject)"/> because there are too many things to transpile
+		/// </summary>
+		/// <param name="__instance"></param>
+		/// <param name="useObj"></param>
         private void NewPrefixPatch(Survival __instance, GameObject useObj)
         {
 			flag = false;

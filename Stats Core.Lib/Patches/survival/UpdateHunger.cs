@@ -3,10 +3,10 @@ using Stats_Core.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches.survival
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.UpdateHunger))]
-    internal class Survival_UpdateHunger_Hook
+    internal class Survival_UpdateHunger
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -26,14 +26,14 @@ namespace Stats_Core.Patches.survival
                 
                 if (!setFoodWater && foodWaterTranspiler.IsCurrentInstructionGood(i))
                 {
-                    instruction = foodWaterTranspiler.CreateNewCodeInstruction<Survival_UpdateHunger_Hook>
+                    instruction = foodWaterTranspiler.CreateNewCodeInstruction<Survival_UpdateHunger>
                         (nameof(GetFoodWaterHealThreshold));
                     offsetToInstruction = 1;
                     setFoodWater = true;
                 }
                 else if (!setBaseRegen && baseRegenTranspiler.IsCurrentInstructionGood(i))
                 {
-                    instruction = baseRegenTranspiler.CreateNewCodeInstruction<Survival_UpdateHunger_Hook>
+                    instruction = baseRegenTranspiler.CreateNewCodeInstruction<Survival_UpdateHunger>
                         (nameof(GetBaseRegen_HealthToAdd));
                     setBaseRegen = true;
                 }

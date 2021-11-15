@@ -1,12 +1,11 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches.equiptment.airBladder
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(AirBladder), nameof(AirBladder.ApplyBuoyancyForce))]
-    internal class AirBladder_ApplyBuoyancyForce_Hook
+    internal class AirBladder_ApplyBuoyancyForce
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -18,7 +17,7 @@ namespace Stats_Core.Patches.equiptment.airBladder
                 if (!maxOxygenTranspiler.IsCurrentInstructionGood(i))
                     continue;
 
-                codeInstructions[i] = maxOxygenTranspiler.CreateNewCodeInstruction<AirBladder_OnEnable_Hook>
+                codeInstructions[i] = maxOxygenTranspiler.CreateNewCodeInstruction<AirBladder_OnEnable>
                         (nameof(ReplaceMaxOxygen));
                 break;
             }
@@ -28,7 +27,7 @@ namespace Stats_Core.Patches.equiptment.airBladder
 
         public static float ReplaceMaxOxygen(float num1, float num2)
         {
-            return num1 / Stats.equiptment.AirBladder.MaxOxygenConsumption;
+            return num1 / Stats.equiptment.AirBladderData.MaxOxygen;
         }
     }
 }

@@ -3,10 +3,10 @@ using System;
 using UnityEngine;
 using Stats_Core.Extensions;
 
-namespace Stats_Core.Patches.survival
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.UpdateStats))]
-    internal class Survival_UpdateStats_Hook
+    internal class Survival_UpdateStats
     {
 		internal static float totalFoodThirstDamage;
 
@@ -14,7 +14,7 @@ namespace Stats_Core.Patches.survival
         [HarmonyPrefix]
         internal static bool Prefix(Survival __instance, float timePassed)
         {
-			var patch = new Survival_UpdateStats_Hook();
+			var patch = new Survival_UpdateStats();
 			patch.NewPrefixPatch(__instance, timePassed);
 			return false;
 		}

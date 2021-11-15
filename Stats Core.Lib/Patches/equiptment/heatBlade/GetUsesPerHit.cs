@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches.equiptment.heatBlade
+namespace Stats_Core.Patches
 {
 	[HarmonyPatch(typeof(HeatBlade), nameof(HeatBlade.GetUsesPerHit))]
 	internal class HeatBlade_GetUsesPerHit_Patch

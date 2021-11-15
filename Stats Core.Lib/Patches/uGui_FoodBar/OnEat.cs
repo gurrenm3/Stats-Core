@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches.uGui_FoodBar
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(uGUI_FoodBar), nameof(uGUI_FoodBar.OnEat))]
-    internal class uGUIFoodBar_OnEat_Hook
+    internal class uGUIFoodBar_OnEat
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -20,7 +20,7 @@ namespace Stats_Core.Patches.uGui_FoodBar
                 if (!transpiler.IsCurrentInstructionGood(i))
                     continue;
 
-                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIFoodBar_OnEat_Hook>(nameof(GetCurrentFood));
+                var newInstruction = transpiler.CreateNewCodeInstruction<uGUIFoodBar_OnEat>(nameof(GetCurrentFood));
                 codeInstructions[i] = newInstruction;
                 break;
             }

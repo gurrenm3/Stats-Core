@@ -3,10 +3,13 @@ using Stats_Core.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches.liveMixin
+namespace Stats_Core.Patches
 {
+    /// <summary>
+    /// This method overwrites a hardcoded value, making <see cref="LiveMixin.tempDamageHealRate"/> actually do something.
+    /// </summary>
     [HarmonyPatch(typeof(LiveMixin), nameof(LiveMixin.TakeDamage))]
-    internal class LiveMixin_TakeDamage_Hook
+    internal class LiveMixin_TakeDamage
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -19,7 +22,7 @@ namespace Stats_Core.Patches.liveMixin
                     continue;
 
                 const int offsetToInstruction = 1;
-                codeInstructions[i + offsetToInstruction] = tempDamageHealRateTranspiler.CreateNewCodeInstruction<LiveMixin_TakeDamage_Hook>
+                codeInstructions[i + offsetToInstruction] = tempDamageHealRateTranspiler.CreateNewCodeInstruction<LiveMixin_TakeDamage>
                         (nameof(GetNewTempDamageHealRate));
                 break;
             }

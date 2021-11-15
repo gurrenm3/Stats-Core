@@ -1,31 +1,121 @@
-﻿using static Stats_Core.Stats.equiptment.AirBladder;
+﻿using static Stats_Core.Stats.equiptment.AirBladderData;
 
 namespace Stats_Core.Extensions
 {
+    /// <summary>
+    /// Extension methods for <see cref="AirBladder"/>.
+    /// </summary>
     public static class AirBladderExt
     {
+        /// <summary>
+        /// Returns whether or not the air bladder is deflating.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
         public static bool IsDeflating(this AirBladder airBladder) => airBladder.deflating;
+
+        /// <summary>
+        /// Returns whether or not the air bladder is inflating.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
         public static bool IsInflating(this AirBladder airBladder) => airBladder.inflating;
+
+        /// <summary>
+        /// Returns whether or not this is the first time an air bladder has been used.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
         public static bool IsFirstUse(this AirBladder airBladder) => airBladder.firstUse;
         
         
+        /// <summary>
+        /// Returns the amount of Oxygen currently in the air bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
         public static float GetOxygen(this AirBladder airBladder) => airBladder.oxygen;
-        public static float AddOxygen(this AirBladder airBladder, float amount) => airBladder.oxygen += amount;
-        public static float RemoveOxygen(this AirBladder airBladder, float amount) => airBladder.oxygen -= amount;
+
+        /// <summary>
+        /// Raise the amount of Oxygen currently in the air bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to raise Oxygen by.</param>
+        /// <returns></returns>
+        public static void RaiseOxygen(this AirBladder airBladder, float amount) => airBladder.oxygen += amount;
+
+        /// <summary>
+        /// Reduce the amount of Oxygen currently in the air bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to raise Oxygen by.</param>
+        /// <returns></returns>
+        public static void ReduceOxygen(this AirBladder airBladder, float amount) => airBladder.oxygen -= amount;
 
 
-        public static float GetMaxOxygenConsumption(this AirBladder airBladder) => MaxOxygenConsumption;
-        public static float AddMaxOxygenConsumption(this AirBladder airBladder, float amount) => MaxOxygenConsumption += amount;
-        public static float SubtractMaxOxygenConsumption(this AirBladder airBladder, float amount) => MaxOxygenConsumption -= amount;
+        /// <summary>
+        /// Returns the maximum amount of Oxygen the Air Bladder can hold.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
+        public static float GetMaxOxygen(this AirBladder airBladder) => MaxOxygen;
+
+        /// <summary>
+        /// Raises the maximum amount of Oxygen the Air Bladder can hold.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to raise Max O2 by.</param>
+        public static void RaiseMaxOxygen(this AirBladder airBladder, float amount) => MaxOxygen += amount;
+
+        /// <summary>
+        /// Reduces the maximum amount of Oxygen the Air Bladder can hold.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to reduce Max O2 by.</param>
+        public static void ReduceMaxOxygen(this AirBladder airBladder, float amount) => MaxOxygen -= amount;
 
 
-        public static float GetO2TransferPerSecond(this AirBladder airBladder) => O2TransferPerSecond;
-        public static float AddO2TransferPerSecond(this AirBladder airBladder, float amount) => O2TransferPerSecond += amount;
-        public static float SubtractO2TransferPerSecond(this AirBladder airBladder, float amount) => O2TransferPerSecond -= amount;
+        /// <summary>
+        /// Returns the amount of O2 consumed per second when using the Air Bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
+        public static float GetO2PerSecond(this AirBladder airBladder) => O2PerSecond;
+
+        /// <summary>
+        /// Raises the amount of O2 consumed per second when using the Air Bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to raise O2 consumption by.</param>
+        public static void RaiseO2PerSecond(this AirBladder airBladder, float amount) => O2PerSecond += amount;
+
+        /// <summary>
+        /// Reduces the amount of O2 consumed per second when using the Air Bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to reduce O2 comsumption by.</param>
+        public static void ReduceO2PerSecond(this AirBladder airBladder, float amount) => O2PerSecond -= amount;
 
 
+        /// <summary>
+        /// Returns the amount of upward "floating" force caused by using air bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <returns></returns>
         public static float GetBuoyancyForce(this AirBladder airBladder) => airBladder.forceConstant;
-        public static void AddBuoyancyForce(this AirBladder airBladder, float amount) => airBladder.forceConstant += amount;
-        public static void SubtractBuoyancyForce(this AirBladder airBladder, float amount) => airBladder.forceConstant -= amount;
+
+        /// <summary>
+        /// Raises the amount of upward "floating" force caused by using air bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to raise upward "floating" force by.</param>
+        public static void RaiseBuoyancyForce(this AirBladder airBladder, float amount) => airBladder.forceConstant += amount;
+
+        /// <summary>
+        /// Reduces the amount of upward "floating" force caused by using air bladder.
+        /// </summary>
+        /// <param name="airBladder"></param>
+        /// <param name="amount">Amount to reduce upward "floating" force by.</param>
+        public static void ReduceBuoyancyForce(this AirBladder airBladder, float amount) => airBladder.forceConstant -= amount;
     }
 }

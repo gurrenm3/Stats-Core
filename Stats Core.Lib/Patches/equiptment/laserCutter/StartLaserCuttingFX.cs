@@ -1,10 +1,9 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
 
-namespace Stats_Core.Patches.equiptment.laserCutter
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(LaserCutter), nameof(LaserCutter.StartLaserCuttingFX))]
-    internal class LaserCutter_StartLaserCuttingFX_Hook
+    internal class LaserCutter_StartLaserCuttingFX
     {
 		[HarmonyPrefix]
 		internal static bool Prefix(LaserCutter __instance)

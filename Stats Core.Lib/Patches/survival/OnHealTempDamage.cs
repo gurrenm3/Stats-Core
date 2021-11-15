@@ -2,10 +2,10 @@
 using Stats_Core.Extensions;
 using UnityEngine;
 
-namespace Stats_Core.Patches.survival
+namespace Stats_Core.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.OnHealTempDamage))]
-    internal class Survival_OnHealTempDamage_Hook
+    internal class Survival_OnHealTempDamage
     {
         [HarmonyPostfix]
         public static void Postfix(Survival __instance, float damage)
