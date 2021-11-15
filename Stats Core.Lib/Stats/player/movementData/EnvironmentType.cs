@@ -1,4 +1,4 @@
-﻿namespace Stats_Core.Stats.player.movementData
+﻿namespace StatsCore.Stats.player.movementData
 {
     internal enum EnvironmentType
     {

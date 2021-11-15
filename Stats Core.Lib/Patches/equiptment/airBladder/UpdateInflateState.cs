@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using static Stats_Core.Stats.equiptment.AirBladderData;
+using static StatsCore.Stats.AirBladderData;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	/// <summary>
 	/// This patch is basically a duplicate of the original <see cref="AirBladder.UpdateInflateState"/>. Needed to modify hardcoded values

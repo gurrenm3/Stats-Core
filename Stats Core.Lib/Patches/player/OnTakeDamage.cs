@@ -1,11 +1,11 @@
 ﻿using HarmonyLib;
-using Stats_Core.Stat_Handlers;
+using StatsCore.Stat_Handlers;
 using UnityEngine;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	[HarmonyPatch(typeof(Player), nameof(Player.OnTakeDamage))]
 	internal class Player_OnTakeDamage

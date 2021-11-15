@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	[HarmonyPatch(typeof(MainMenuController), nameof(MainMenuController.Start))]
 	internal class MainMenuController_Start

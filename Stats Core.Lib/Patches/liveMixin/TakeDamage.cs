@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     /// <summary>
     /// This method overwrites a hardcoded value, making <see cref="LiveMixin.tempDamageHealRate"/> actually do something.

@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using System;
 using UnityEngine;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.UpdateStats))]
     internal class Survival_UpdateStats

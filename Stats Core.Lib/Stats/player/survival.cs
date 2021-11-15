@@ -1,4 +1,4 @@
-﻿namespace Stats_Core.Stats.player
+﻿namespace StatsCore.Stats.player
 {
 	public static class survival
     {

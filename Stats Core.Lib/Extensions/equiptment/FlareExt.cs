@@ -1,27 +1,102 @@
-﻿namespace Stats_Core.Extensions
+﻿namespace StatsCore.Extensions
 {
+    /// <summary>
+    /// Extension methods for <see cref="Flare"/>.
+    /// </summary>
     public static class FlareExt
     {
+        /// <summary>
+        /// Returns whether or not this flare is being thrown.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <returns></returns>
         public static bool IsThrowing(this Flare flare) => flare.isThrowing;
 
-
+        /// <summary>
+        /// Returns the flicker intensity of the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <returns></returns>
         public static float GetFlickerInterval(this Flare flare) => flare.flickerInterval;
-        public static void AddFlickerInterval(this Flare flare, float amount) => flare.flickerInterval += amount;
-        public static void SubtractFlickerInterval(this Flare flare, float amount) => flare.flickerInterval -= amount;
+
+        /// <summary>
+        /// Raises the flicker intensity of the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseFlickerInterval(this Flare flare, float amount) => flare.flickerInterval += amount;
+
+        /// <summary>
+        /// Reduces the flicker intensity of the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceFlickerInterval(this Flare flare, float amount) => flare.flickerInterval -= amount;
 
 
+        /// <summary>
+        /// Returns how long it takes to throw the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <returns></returns>
         public static float GetThrowDuration(this Flare flare) => flare.throwDuration;
-        public static void AddThrowDuration(this Flare flare, float amount) => flare.throwDuration += amount;
-        public static void SubtractThrowDuration(this Flare flare, float amount) => flare.throwDuration -= amount;
+
+        /// <summary>
+        /// Raise the time it takes to throw the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseThrowDuration(this Flare flare, float amount) => flare.throwDuration += amount;
+
+        /// <summary>
+        /// Reduce the time it takes to throw the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceThrowDuration(this Flare flare, float amount) => flare.throwDuration -= amount;
 
 
+        /// <summary>
+        /// Returns the original light intensity for the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <returns></returns>
         public static float GetOriginalLightIntensity(this Flare flare) => flare.originalIntensity;
-        public static void AddOriginalLightIntensity(this Flare flare, float amount) => flare.originalIntensity += amount;
-        public static void SubtractOriginalLightIntensity(this Flare flare, float amount) => flare.originalIntensity -= amount;
+
+        /// <summary>
+        /// Raise the original light intensity for the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseOriginalLightIntensity(this Flare flare, float amount) => flare.originalIntensity += amount;
+
+        /// <summary>
+        /// Reduce the original light intensity for the flare.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceOriginalLightIntensity(this Flare flare, float amount) => flare.originalIntensity -= amount;
 
 
+        /// <summary>
+        /// Returns the original light range.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <returns></returns>
         public static float GetOriginalLightRange(this Flare flare) => flare.originalrange;
-        public static void AddOriginalLightRange(this Flare flare, float amount) => flare.originalrange += amount;
-        public static void SubtractOriginalLightRange(this Flare flare, float amount) => flare.originalrange -= amount;
+
+        /// <summary>
+        /// Raises the original light range.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseOriginalLightRange(this Flare flare, float amount) => flare.originalrange += amount;
+        
+        /// <summary>
+        /// Reduces the original light range.
+        /// </summary>
+        /// <param name="flare"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceOriginalLightRange(this Flare flare, float amount) => flare.originalrange -= amount;
     }
 }

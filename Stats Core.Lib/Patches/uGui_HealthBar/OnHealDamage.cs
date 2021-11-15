@@ -1,11 +1,11 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(uGUI_HealthBar), nameof(uGUI_HealthBar.OnHealDamage))]
     internal class uGUIHealthBar_OnHealDamage

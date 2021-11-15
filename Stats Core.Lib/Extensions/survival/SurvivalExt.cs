@@ -1,6 +1,6 @@
-﻿using Stats_Core.Stats.player;
+﻿using StatsCore.Stats.player;
 
-namespace Stats_Core.Extensions
+namespace StatsCore.Extensions
 {
     public static partial class SurvivalExt
     {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stats_Core.Vehicles
+namespace StatsCore.Stats
 {
-	internal class SeaglideStats
+	internal static class SeaglideData
     {
 		public static float ForwardMaxSpeed { get; set; }
 		public static float BackwardsMaxSpeed { get; set; }

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	[HarmonyPatch(typeof(LaserCutter), nameof(LaserCutter.RandomizeIntensity))]
 	internal class LaserCutter_RandomizeIntensity
@@ -11,8 +11,8 @@ namespace Stats_Core.Patches
 			if (Guard.IsGamePaused())
 				return;
 
-			float min = Stats.equiptment.LaserCutter.MinRandomIntensity;
-			float max = Stats.equiptment.LaserCutter.MaxRandomIntensity;
+			float min = Stats.LaserCutterData.MinRandomIntensity;
+			float max = Stats.LaserCutterData.MaxRandomIntensity;
 
 			__instance.lightIntensity = UnityEngine.Random.Range(min, max);
 		}

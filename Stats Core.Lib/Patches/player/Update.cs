@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
-using Stats_Core.Stat_Handlers;
+using StatsCore.Extensions;
+using StatsCore.Stat_Handlers;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	[HarmonyPatch(typeof(Player), nameof(Player.Update))]
 	internal class Player_Update

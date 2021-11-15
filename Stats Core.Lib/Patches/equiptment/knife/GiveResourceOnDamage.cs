@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
-using System.Collections.Generic;
 using System.Reflection.Emit;
+using System.Collections.Generic;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(Knife), nameof(Knife.GiveResourceOnDamage))]
     internal class Knife_GiveResourceOnDamage
@@ -28,8 +28,8 @@ namespace Stats_Core.Patches
 
         public static void GetBaseResourceOnDamage(TechType harvestOutputData, int amount, bool noMessage, bool spawnIfCantAdd)
         {
-            amount = Stats.equiptment.Knife.BaseResourceOnDamage;
-            spawnIfCantAdd = Stats.equiptment.Knife.SpawnResourceIfCantAdd;
+            amount = Stats.KnifeData.BaseResourceOnDamage;
+            spawnIfCantAdd = Stats.KnifeData.SpawnResourceIfCantAdd;
             CraftData.AddToInventory(harvestOutputData, amount, noMessage, spawnIfCantAdd);
         }
     }

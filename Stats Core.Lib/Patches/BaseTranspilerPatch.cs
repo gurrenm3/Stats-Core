@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     internal class BaseTranspilerPatch
     {

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     /// <summary>
     /// This class hasn't been tested yet

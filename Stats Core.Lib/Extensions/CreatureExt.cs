@@ -1,4 +1,4 @@
-﻿namespace Stats_Core.Extensions
+﻿namespace StatsCore.Extensions
 {
     /// <summary>
     /// Extension methods for <see cref="Creature"/>.

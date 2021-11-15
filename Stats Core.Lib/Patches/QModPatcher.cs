@@ -1,9 +1,8 @@
-﻿using System.Reflection;
+﻿using QModManager.API.ModLoading;
+using System.Reflection;
 using HarmonyLib;
-using Stats_Core.Events;
-using QModManager.API.ModLoading;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [QModCore]
     public static class QModPatcher
@@ -14,8 +13,6 @@ namespace Stats_Core.Patches
             var assembly = Assembly.GetExecutingAssembly();
             new Harmony($"GurrenM4_{assembly.GetName().Name}").PatchAll(assembly);
 
-            TempMod temp = new TempMod();
-            Player_Events.PlayerUpdated += temp.PlayerUpdated;
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using static Stats_Core.Stats.equiptment.AirBladderData;
+﻿using static StatsCore.Stats.AirBladderData;
 
-namespace Stats_Core.Extensions
+namespace StatsCore.Extensions
 {
     /// <summary>
     /// Extension methods for <see cref="AirBladder"/>.

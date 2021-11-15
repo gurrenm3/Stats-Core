@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Stats_Core
+namespace StatsCore
 {
     internal class Guard
     {

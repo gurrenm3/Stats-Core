@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(AirBladder), nameof(AirBladder.ApplyBuoyancyForce))]
     internal class AirBladder_ApplyBuoyancyForce
@@ -27,7 +27,7 @@ namespace Stats_Core.Patches
 
         public static float ReplaceMaxOxygen(float num1, float num2)
         {
-            return num1 / Stats.equiptment.AirBladderData.MaxOxygen;
+            return num1 / Stats.AirBladderData.MaxOxygen;
         }
     }
 }

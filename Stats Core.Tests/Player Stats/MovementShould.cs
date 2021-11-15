@@ -1,7 +1,7 @@
-﻿using Stats_Core.Extensions;
+﻿using StatsCore.Extensions;
 using Xunit;
 
-namespace Stats_Core.Tests.Stats.player
+namespace StatsCore.Tests.Stats.player
 {
     public class MovementShould
     {

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	[HarmonyPatch(typeof(Knife), nameof(Knife.GetUsesPerHit))]
 	internal class Knife_GetUsesPerHit
@@ -11,7 +11,7 @@ namespace Stats_Core.Patches
 			if (Guard.IsGamePaused())
 				return;
 
-			__result = Stats.equiptment.Knife.UsesPerHit;
+			__result = Stats.KnifeData.UsesPerHit;
 		}
 	}
 }

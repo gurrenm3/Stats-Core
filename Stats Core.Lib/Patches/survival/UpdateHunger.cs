@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.UpdateHunger))]
     internal class Survival_UpdateHunger

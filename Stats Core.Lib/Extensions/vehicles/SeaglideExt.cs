@@ -1,4 +1,4 @@
-﻿namespace Stats_Core.Extensions
+﻿namespace StatsCore.Extensions
 {
     public static class SeaglideExt
     {

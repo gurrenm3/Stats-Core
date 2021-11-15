@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 using UnityEngine;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(Survival), nameof(Survival.Eat))]
     internal class Survival_Eat

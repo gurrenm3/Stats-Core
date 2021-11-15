@@ -1,6 +1,6 @@
-﻿using Stats_Core.Extensions;
+﻿using StatsCore.Extensions;
 
-namespace Stats_Core.Stat_Handlers
+namespace StatsCore.Stat_Handlers
 {
     internal class DamageResistanceHandler
     {

@@ -1,10 +1,10 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(uGUI_FoodBar), nameof(uGUI_FoodBar.LateUpdate))]
     internal class uGUIFoodBar_LateUpdate

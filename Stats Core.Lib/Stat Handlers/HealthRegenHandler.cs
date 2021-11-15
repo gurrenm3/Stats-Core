@@ -1,6 +1,6 @@
-﻿namespace Stats_Core.Stat_Handlers
+﻿namespace StatsCore.Stat_Handlers
 {
-    using Stats_Core.Extensions;
+    using StatsCore.Extensions;
     using UnityEngine;
 	
 

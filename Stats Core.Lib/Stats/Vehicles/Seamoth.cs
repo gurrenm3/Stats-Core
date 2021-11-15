@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stats_Core.Vehicles
+namespace StatsCore.Stats
 {
-    internal class Seamoth
+    internal static class SeamothData
     {
 
     }

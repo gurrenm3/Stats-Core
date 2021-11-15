@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
 	[HarmonyPatch(typeof(HeatBlade), nameof(HeatBlade.GetUsesPerHit))]
 	internal class HeatBlade_GetUsesPerHit_Patch
@@ -11,7 +11,7 @@ namespace Stats_Core.Patches
 			if (Guard.IsGamePaused())
 				return;
 
-			__result = Stats.equiptment.HeatBlade.UsesPerHit;
+			__result = Stats.HeatBladeData.UsesPerHit;
 		}
 	}
 }

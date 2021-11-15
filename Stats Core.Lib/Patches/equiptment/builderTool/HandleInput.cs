@@ -1,10 +1,10 @@
 ﻿using HarmonyLib;
-using static Stats_Core.Stats.equiptment.BuilderTool;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 using UnityEngine;
+using System.Reflection.Emit;
+using System.Collections.Generic;
+using static StatsCore.Stats.BuilderToolData;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(BuilderTool), nameof(BuilderTool.HandleInput))]
     internal class BuilderTool_HandleInput

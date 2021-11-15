@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(LaserCutter), nameof(LaserCutter.StartLaserCuttingFX))]
     internal class LaserCutter_StartLaserCuttingFX
@@ -15,7 +15,7 @@ namespace Stats_Core.Patches
 				__instance.fxIsPlaying = true;
 				__instance.fxLight.enabled = true;
 
-				float repeatRate = Stats.equiptment.LaserCutter.RandomizeIntensityRepeatRate;
+				float repeatRate = Stats.LaserCutterData.RandomizeIntensityRepeatRate;
 				__instance.InvokeRepeating("RandomizeIntensity", 0f, repeatRate);
 				__instance.totalTimeActive = 0f;
 			}

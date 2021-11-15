@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using Stats_Core.Extensions;
+using StatsCore.Extensions;
 
-namespace Stats_Core.Patches
+namespace StatsCore.Patches
 {
     [HarmonyPatch(typeof(uGUI_WaterBar), nameof(uGUI_WaterBar.SetValue))]
     internal class uGUIWaterBar_SetValue
