@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using StatsCore.Extensions;
 using StatsCore.Stat_Handlers;
+using UnityEngine;
 
 namespace StatsCore.Patches
 {
@@ -26,6 +27,19 @@ namespace StatsCore.Patches
 				return;
 
 			ResetSurvivalForNewborn(__instance);
+
+			if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                __instance.GetSurvival().ReduceFoodTime(2500);
+                __instance.GetSurvival().SubtractUpdateHungerInterval(9f);
+            }
+
+			if (Input.GetKeyDown(KeyCode.DownArrow))
+			{
+                ErrorMessage.AddMessage(__instance.GetSurvival().GetUpdateHungerInterval().ToString());
+                ErrorMessage.AddMessage(__instance.GetSurvival().GetFoodTime().ToString());
+            }
+
 
 			/*if (__instance.motorMode == Player.MotorMode.Seaglide)
 			{

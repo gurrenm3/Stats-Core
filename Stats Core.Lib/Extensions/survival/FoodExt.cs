@@ -1,51 +1,207 @@
-﻿using StatsCore.Stats.player;
+﻿using StatsCore.Stats;
 
 namespace StatsCore.Extensions
 {
+    /// <summary>
+    /// Extension methods for <see cref="Survival"/>.
+    /// </summary>
     public static partial class SurvivalExt
     {
+        /// <summary>
+        /// Returns the food that the stomach starts with when respawning.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetStartingFood(this Survival survival) => Food.StartingFood;
-        public static void AddStartingFood(this Survival survival, float amount) => Food.StartingFood += amount;
-        public static void SubtractStartingFood(this Survival survival, float amount) => Food.StartingFood -= amount;
+
+        /// <summary>
+        /// Raise the food that the stomach starts with when respawning. 
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseStartingFood(this Survival survival, float amount) => Food.StartingFood += amount;
+
+        /// <summary>
+        /// Reduce the food that the stomach starts with when respawning.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceStartingFood(this Survival survival, float amount) => Food.StartingFood -= amount;
 
 
+        /// <summary>
+        /// Returns the minimum amount of food the stomach can hold.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetMinStomachSize(this Survival survival) => Food.MinFood;
-        public static void AddMinStomachSize(this Survival survival, float amount) => Food.MinFood += amount;
-        public static void SubtractMinStomachSize(this Survival survival, float amount) => Food.MinFood -= amount;
+
+        /// <summary>
+        /// Raise the minimum amount of food the stomach can hold. Useful for making the minimum food above/below zero.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseMinStomachSize(this Survival survival, float amount) => Food.MinFood += amount;
+
+        /// <summary>
+        /// Reduce the minimum amount of food the stomach can hold. Useful for making the minimum food above/below zero.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceMinStomachSize(this Survival survival, float amount) => Food.MinFood -= amount;
 
 
+        /// <summary>
+        /// Returns the amout of food the stomach can hold.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetStomachSize(this Survival survival) => Food.StomachSize;
-        public static void AddStomachSize(this Survival survival, float amount) => Food.StomachSize += amount;
-        public static void SubtractStomachSize(this Survival survival, float amount) => Food.StomachSize -= amount;
+
+        /// <summary>
+        /// Raise the amout of food the stomach can hold.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseStomachSize(this Survival survival, float amount) => Food.StomachSize += amount;
+
+        /// <summary>
+        /// Reduce the amout of food the stomach can hold.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceStomachSize(this Survival survival, float amount) => Food.StomachSize -= amount;
         
 
+        /// <summary>
+        /// Returns the amount the stomach can overfill.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetStomachOverfillSize(this Survival survival) => Food.OverfillStomachSize;
-        public static void AddStomachOverfillSize(this Survival survival, float amount) => Food.OverfillStomachSize += amount;
-        public static void SubtractStomachOverfillSize(this Survival survival, float amount) => Food.OverfillStomachSize -= amount;
+
+        /// <summary>
+        /// Raise the amount the stomach can overfill.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseStomachOverfillSize(this Survival survival, float amount) => Food.OverfillStomachSize += amount;
+
+        /// <summary>
+        /// Reduce the amount the stomach can overfill.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceStomachOverfillSize(this Survival survival, float amount) => Food.OverfillStomachSize -= amount;
 
 
+        /// <summary>
+        /// Returns the FoodPerTempDamage.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetFoodPerTempDamage(this Survival survival) => Food.FoodPerTempDamage;
-        public static void AddFoodPerTempDamage(this Survival survival, float amount) => Food.FoodPerTempDamage += amount;
-        public static void SubtractFoodPerTempDamage(this Survival survival, float amount) => Food.FoodPerTempDamage -= amount;
+
+        /// <summary>
+        /// Raise the FoodPerTempDamage.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseFoodPerTempDamage(this Survival survival, float amount) => Food.FoodPerTempDamage += amount;
+
+        /// <summary>
+        /// Reduce the FoodPerTempDamage.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceFoodPerTempDamage(this Survival survival, float amount) => Food.FoodPerTempDamage -= amount;
 
 
+        /// <summary>
+        /// Returns the amount of time in between consuming food.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetFoodTime(this Survival survival) => Food.FoodTime;
-        public static void AddFoodTime(this Survival survival, float amount) => Food.FoodTime += amount;
-        public static void SubtractFoodTime(this Survival survival, float amount) => Food.FoodTime -= amount;
+
+        /// <summary>
+        /// Raise the amount of time in between consuming food.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseFoodTime(this Survival survival, float amount) => Food.FoodTime += amount;
+
+        /// <summary>
+        /// Reduce the amount of time in between consuming food.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceFoodTime(this Survival survival, float amount) => Food.FoodTime -= amount;
 
 
+        /// <summary>
+        /// Returns the damage taken when starving.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetStarveDamage(this Survival survival) => Food.StarveDamage;
-        public static void AddStarveDamage(this Survival survival, float amount) => Food.StarveDamage += amount;
-        public static void SubtractStarveDamage(this Survival survival, float amount) => Food.StarveDamage -= amount;
+
+        /// <summary>
+        /// Raise the damage taken when starving.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseStarveDamage(this Survival survival, float amount) => Food.StarveDamage += amount;
+
+        /// <summary>
+        /// Reduce the damage taken when starving.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceStarveDamage(this Survival survival, float amount) => Food.StarveDamage -= amount;
 
 
+        /// <summary>
+        /// Returns the threshold for low food warnings.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetLowFoodThreshold(this Survival survival) => Food.LowFoodThreshold;
-        public static void AddLowFoodThreshold(this Survival survival, float amount) => Food.LowFoodThreshold += amount;
-        public static void SubtractLowFoodThreshold(this Survival survival, float amount) => Food.LowFoodThreshold -= amount;
+
+        /// <summary>
+        /// Raise the threshold for low food warnings.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseLowFoodThreshold(this Survival survival, float amount) => Food.LowFoodThreshold += amount;
+
+        /// <summary>
+        /// Reduce the threshold for low food warnings.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceLowFoodThreshold(this Survival survival, float amount) => Food.LowFoodThreshold -= amount;
 
 
+        /// <summary>
+        /// Returns the threshold for critical food warnings.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetCriticalFoodThreshold(this Survival survival) => Food.CriticalFoodThreshold;
-        public static void AddCriticalFoodThreshold(this Survival survival, float amount) => Food.CriticalFoodThreshold += amount;
-        public static void SubtractCriticalFoodThreshold(this Survival survival, float amount) => Food.CriticalFoodThreshold -= amount;
+
+        /// <summary>
+        /// Raise the threshold for critical food warnings.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseCriticalFoodThreshold(this Survival survival, float amount) => Food.CriticalFoodThreshold += amount;
+
+        /// <summary>
+        /// Reduce the threshold for critical food warnings.
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceCriticalFoodThreshold(this Survival survival, float amount) => Food.CriticalFoodThreshold -= amount;
     }
 }

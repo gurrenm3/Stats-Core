@@ -4,7 +4,7 @@
     /// Contains extra methods/variables for manipulating <see cref="LaserCutter"/>. 
     /// Needed because some values are hard coded in Subnautica and therefore new variables/methods are needed.
     /// </summary>
-    internal static class LaserCutterData
+    public static class LaserCutterData
     {
         /// <summary>
         /// A placeholder variable for manually adjusting the minimum random intensity.

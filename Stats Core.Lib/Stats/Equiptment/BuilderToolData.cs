@@ -4,7 +4,7 @@
     /// Contains extra methods/variables for manipulating <see cref="BuilderTool"/>. 
     /// Needed because some values are hard coded in Subnautica and therefore new variables/methods are needed.
     /// </summary>
-    internal static class BuilderToolData
+    public static class BuilderToolData
     {
         /// <summary>
         /// A placeholder variable for manually adjusting the maximum build distance for the builder tool.

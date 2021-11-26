@@ -4,7 +4,7 @@
     /// Contains extra methods/variables for manipulating <see cref="AirBladder"/>. 
     /// Needed because some values are hard coded in Subnautica and therefore new variables/methods are needed.
     /// </summary>
-    internal static class AirBladderData
+    public static class AirBladderData
     {
         /// <summary>
         /// A placeholder variable for manually adjusting the max oxygen in an AirBladder. 

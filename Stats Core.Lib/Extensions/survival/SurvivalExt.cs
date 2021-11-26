@@ -1,12 +1,29 @@
-﻿using StatsCore.Stats.player;
-
-namespace StatsCore.Extensions
+﻿namespace StatsCore.Extensions
 {
+    /// <summary>
+    /// Extension methods for <see cref="Survival"/>.
+    /// </summary>
     public static partial class SurvivalExt
     {
+        /// <summary>
+        /// Returns the 
+        /// </summary>
+        /// <param name="survival"></param>
+        /// <returns></returns>
         public static float GetUpdateHungerInterval(this Survival survival) => survival.kUpdateHungerInterval;
-        public static void AddUpdateHungerInterval(this Survival survival, float amount) => survival.kUpdateHungerInterval += amount;
-        public static void SubtractUpdateHungerInterval(this Survival survival, float amount) => survival.kUpdateHungerInterval -= amount;
+        public static void AddUpdateHungerInterval(this Survival survival, float amount)
+        {
+            survival.kUpdateHungerInterval += amount;
+            survival.CancelInvoke("UpdateHunger");
+            survival.InvokeRepeating("UpdateHunger", 0, survival.kUpdateHungerInterval);
+        }
+     
+        public static void SubtractUpdateHungerInterval(this Survival survival, float amount)
+        {
+            survival.kUpdateHungerInterval -= amount;
+            survival.CancelInvoke("UpdateHunger");
+            survival.InvokeRepeating("UpdateHunger", 0, survival.kUpdateHungerInterval);
+        }
 
 
         /// <summary> How much health to regen when player has eaten enough food. Calculated as (baseRegenRate * UpdateHungerInterval) </summary>

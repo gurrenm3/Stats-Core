@@ -10,7 +10,7 @@ namespace StatsCore.Patches
 	[HarmonyPatch(typeof(Player), nameof(Player.OnTakeDamage))]
 	internal class Player_OnTakeDamage
 	{
-        private static DamageResistanceHandler damageResistanceHandler = new DamageResistanceHandler();
+        private static DamageResistanceHandler damageResistanceHandler;
         private static Player playerInstance;
 
         [HarmonyPrefix]
@@ -20,6 +20,9 @@ namespace StatsCore.Patches
                 return true;
 
             playerInstance = __instance;
+
+            if (damageResistanceHandler == null)
+                damageResistanceHandler = new DamageResistanceHandler();
 
             damageResistanceHandler.ApplyDamageResistance(damageInfo);
             return true;

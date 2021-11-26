@@ -73,6 +73,7 @@
     <Compile Include="Extensions\EnergyMixinExt.cs" />
     <Compile Include="Extensions\Equiptment\AirBladderExt.cs" />
     <Compile Include="Extensions\Equiptment\BuilderToolExt.cs" />
+    <Compile Include="Extensions\Items\BatterySourceExt.cs" />
     <Compile Include="Extensions\vehicles\SeaglideExt.cs" />
     <Compile Include="Patches\Equiptment\AirBladder\ApplyBuoyancyForce.cs" />
     <Compile Include="Patches\Equiptment\AirBladder\OnEnable.cs" />
@@ -145,6 +146,6 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "F:\Program Files\Epic Games\Subnautica\QMods\Stats Core\$(TargetFileName)" /y</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "F:\Program Files (x86)\Steam\steamapps\common\Subnautica\QMods\$(TargetName)\$(TargetFileName)" /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
