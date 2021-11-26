@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>65f9a860-26e0-436f-8108-6744f55f7e02</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>$(SolutionName)</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\CreatureDeathExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\CreatureExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DamageInfoExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EnergyMixinExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\AirBladderExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\BuilderToolExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\FireExtinguisher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\FlareExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\FlashlightExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\HeatBladeExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\KnifeExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\LaserCutterExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Equiptment\PlayerToolExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Items\BatterySourceExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\LiveMixinExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\OxygenMgrExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PlayerExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\survival\FoodExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\survival\SurvivalExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\survival\WaterExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\vehicles\SeaglideExt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Guard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\BaseTranspilerPatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Equiptment\BuilderTool\HandleInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Equiptment\HeatBlade\GetUsesPerHit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Equiptment\Knife\GetUsesPerHit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Equiptment\Knife\GiveResourceOnDamage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Equiptment\LaserCutter\RandomizeIntensity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Equiptment\LaserCutter\StartLaserCuttingFX.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\LiveMixin\TakeDamage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Player\GetBreathPeriod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Player\GetOxygenPerBreath.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Player\OnTakeDamage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Player\Player_Update.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Survival\GetWeaknessSpeedScalar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Survival\OnHealTempDamage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Survival\UpdateHunger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\Survival\UpdateStats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\uGui_FoodBar\LateUpdate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\uGui_FoodBar\OnEat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\uGui_FoodBar\SetValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\uGui_HealthBar\OnHealDamage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\uGui_WaterBar\OnDrink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Patches\uGui_WaterBar\SetValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)QModPatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stat Handlers\DamageResistanceHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stat Handlers\HealthRegenHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Equipment\AirBladderData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Equipment\BuilderToolData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Equipment\HeatBladeData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Equipment\KnifeData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Equipment\LaserCutterData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\Air.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\DamageTypeResistance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\Food.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\Health.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\Movement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\Survival.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\Player\Water.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\vehicles\Prawn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\vehicles\Seaglide.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stats\vehicles\Seamoth.cs" />
+  </ItemGroup>
+</Project>
