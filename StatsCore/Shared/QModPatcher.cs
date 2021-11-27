@@ -9,7 +9,7 @@ namespace StatsCore
     public static class QModPatcher
     {
         public static string modsDir = $"{Environment.CurrentDirectory}\\QMods\\{Assembly.GetExecutingAssembly().GetName().Name}";
-        public const string versionNumber = "1.0.0";
+        public const string versionNumber = "2.0.0";
 
         [QModPatch]
         public static void Patch()
