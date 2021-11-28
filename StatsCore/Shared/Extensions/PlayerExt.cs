@@ -97,5 +97,80 @@ namespace StatsCore.Extensions
         /// <param name="damageType">Resistance to modify.</param>
         /// <param name="amount">Amount to reduce resistance by.</param>
         public static void ReducetDamageResistance(this Player player, DamageType damageType, float amount) => DamageTypeResistance.allResistances[damageType] -= amount;
+
+
+#if Subnautica
+        public static Oxygen GetLungs(this Player player) => player.oxygenMgr.GetAllSources()[0];
+#elif BelowZero
+        public static Oxygen GetLungs(this Player player) => player.oxygenMgr.GetAllSources()[0];
+#endif
+
+
+        /// <summary>
+        /// (Cross-Game compatible) Returns the amount of time it takes for the player to suffocate to death after completely running out of Oxygen.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static float GetSuffocationTime(this Player player) => player.suffocationTime;
+
+        /// <summary>
+        /// (Cross-Game compatible) Raises the amount of time it takes for the player to suffocate to death after completely running out of Oxygen.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseSuffocationTime(this Player player, float amount) => player.suffocationTime += amount;
+
+        /// <summary>
+        /// (Cross-Game compatible) Reduces the amount of time it takes for the player to suffocate to death after completely running out of Oxygen.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceSuffocationTime(this Player player, float amount) => player.suffocationTime -= amount;
+
+
+        /// <summary>
+        /// (Cross-Game compatible) Returns the amount of time it takes for the player to recover after suffocating for any amount of time.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static float GetSuffocationRecoveryTime(this Player player) => player.suffocationRecoveryTime;
+
+        /// <summary>
+        /// (Cross-Game compatible) Raises the amount of time it takes for the player to recover after suffocating for any amount of time.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="amount">Amount to raise by.</param>
+        public static void RaiseSuffocationRecoveryTime(this Player player, float amount) => player.suffocationRecoveryTime += amount;
+
+        /// <summary>
+        /// (Cross-Game compatible) Reduces the amount of time it takes for the player to recover after suffocating for any amount of time.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="amount">Amount to reduce by.</param>
+        public static void ReduceSuffocationRecoveryTime(this Player player, float amount) => player.suffocationRecoveryTime -= amount;
+
+
+        /// <summary>
+        /// Returns whether or not the player is currently suffocating.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static bool IsSuffocating(this Player player) => player.GetOxygenAvailable() <= 0;
+
+
+        /// <summary>
+        /// Returns the Player's inventory. Equivelant to Inventory.Get();
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static Inventory GetInventory(this Player player) => Inventory.Get();
+
+
+        /// <summary>
+        /// Returns the currently held tool in the Player's hand
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        public static PlayerTool GetHeldTool(this Player player) => player.GetInventory().GetHeldTool();
     }
 }

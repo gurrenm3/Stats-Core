@@ -28,18 +28,6 @@ namespace StatsCore.Patches
 
 			ResetSurvivalForNewborn(__instance);
 
-			if (Input.GetKeyDown(KeyCode.UpArrow))
-			{
-				__instance.GetSurvival().ReduceFoodTime(2500);
-				__instance.GetSurvival().ReduceUpdateHungerInterval(9f);
-			}
-
-			if (Input.GetKeyDown(KeyCode.DownArrow))
-			{
-				ErrorMessage.AddMessage(__instance.GetSurvival().GetUpdateHungerInterval().ToString());
-				ErrorMessage.AddMessage(__instance.GetSurvival().GetFoodTime().ToString());
-			}
-
 
 			/*if (__instance.motorMode == Player.MotorMode.Seaglide)
 			{

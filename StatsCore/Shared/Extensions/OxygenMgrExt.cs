@@ -1,5 +1,6 @@
 ﻿using StatsCore.Stats;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StatsCore.Extensions
 {
@@ -14,7 +15,12 @@ namespace StatsCore.Extensions
 #if Subnautica
         public static List<Oxygen> GetAllSources(this OxygenManager oxygenManager) => oxygenManager.sources;
 #elif BelowZero
-        public static List<IOxygenSource> GetAllSources(this OxygenManager oxygenManager) => oxygenManager.sources;
+        public static List<Oxygen> GetAllSources(this OxygenManager oxygenManager)
+        {
+            var sources = new List<Oxygen>();
+            oxygenManager.sources.ForEach(source => sources.Add((Oxygen)source));
+            return sources;
+        }
 #endif
 
         /// <summary>
@@ -81,49 +87,5 @@ namespace StatsCore.Extensions
         /// <param name="oxygenManager"></param>
         /// <param name="amount">Amount to reduce by.</param>
         public static void ReduceO2PerBreath(this OxygenManager oxygenManager, float amount) => AirData.OxygenPerBreath -= amount;
-
-
-        /// <summary>
-        /// (Cross-Game compatible) Returns the amount of time it takes for the player to suffocate to death after completely running out of Oxygen.
-        /// </summary>
-        /// <param name="oxygenManager"></param>
-        /// <returns></returns>
-        public static float GetSuffocationTime(this OxygenManager oxygenManager) => AirData.SuffocationTime;
-
-        /// <summary>
-        /// (Cross-Game compatible) Raises the amount of time it takes for the player to suffocate to death after completely running out of Oxygen.
-        /// </summary>
-        /// <param name="oxygenManager"></param>
-        /// <param name="amount">Amount to raise by.</param>
-        public static void RaiseSuffocationTime(this OxygenManager oxygenManager, float amount) => AirData.SuffocationTime += amount;
-
-        /// <summary>
-        /// (Cross-Game compatible) Reduces the amount of time it takes for the player to suffocate to death after completely running out of Oxygen.
-        /// </summary>
-        /// <param name="oxygenManager"></param>
-        /// <param name="amount">Amount to reduce by.</param>
-        public static void ReduceSuffocationTime(this OxygenManager oxygenManager, float amount) => AirData.SuffocationTime -= amount;
-
-
-        /// <summary>
-        /// (Cross-Game compatible) Returns the amount of time it takes for the player to recover after suffocating for any amount of time.
-        /// </summary>
-        /// <param name="oxygenManager"></param>
-        /// <returns></returns>
-        public static float GetSuffocationRecoveryTime(this OxygenManager oxygenManager) => AirData.SuffocationRecoveryTime;
-
-        /// <summary>
-        /// (Cross-Game compatible) Raises the amount of time it takes for the player to recover after suffocating for any amount of time.
-        /// </summary>
-        /// <param name="oxygenManager"></param>
-        /// <param name="amount">Amount to raise by.</param>
-        public static void RaiseSuffocationRecoveryTime(this OxygenManager oxygenManager, float amount) => AirData.SuffocationRecoveryTime += amount;
-
-        /// <summary>
-        /// (Cross-Game compatible) Reduces the amount of time it takes for the player to recover after suffocating for any amount of time.
-        /// </summary>
-        /// <param name="oxygenManager"></param>
-        /// <param name="amount">Amount to reduce by.</param>
-        public static void ReduceSuffocationRecoveryTime(this OxygenManager oxygenManager, float amount) => AirData.SuffocationRecoveryTime -= amount;
     }
 }

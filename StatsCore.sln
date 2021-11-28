@@ -18,18 +18,12 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BelowZeroDebug|Any CPU = BelowZeroDebug|Any CPU
 		BelowZeroRelease|Any CPU = BelowZeroRelease|Any CPU
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 		SubnauticaDebug|Any CPU = SubnauticaDebug|Any CPU
 		SubnauticaRelease|Any CPU = SubnauticaRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.BelowZeroDebug|Any CPU.ActiveCfg = SubnauticaDebug|Any CPU
 		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.BelowZeroRelease|Any CPU.ActiveCfg = SubnauticaRelease|Any CPU
-		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.SubnauticaDebug|Any CPU.ActiveCfg = SubnauticaDebug|Any CPU
 		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.SubnauticaDebug|Any CPU.Build.0 = SubnauticaDebug|Any CPU
 		{DE48B1D7-0282-416C-AA0F-E74706ABCAFC}.SubnauticaRelease|Any CPU.ActiveCfg = SubnauticaRelease|Any CPU
@@ -38,10 +32,6 @@ Global
 		{463761CD-3643-41EC-82C7-66DB9A970624}.BelowZeroDebug|Any CPU.Build.0 = BelowZeroDebug|Any CPU
 		{463761CD-3643-41EC-82C7-66DB9A970624}.BelowZeroRelease|Any CPU.ActiveCfg = BelowZeroRelease|Any CPU
 		{463761CD-3643-41EC-82C7-66DB9A970624}.BelowZeroRelease|Any CPU.Build.0 = BelowZeroRelease|Any CPU
-		{463761CD-3643-41EC-82C7-66DB9A970624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{463761CD-3643-41EC-82C7-66DB9A970624}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{463761CD-3643-41EC-82C7-66DB9A970624}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{463761CD-3643-41EC-82C7-66DB9A970624}.Release|Any CPU.Build.0 = Release|Any CPU
 		{463761CD-3643-41EC-82C7-66DB9A970624}.SubnauticaDebug|Any CPU.ActiveCfg = BelowZeroDebug|Any CPU
 		{463761CD-3643-41EC-82C7-66DB9A970624}.SubnauticaRelease|Any CPU.ActiveCfg = BelowZeroRelease|Any CPU
 	EndGlobalSection

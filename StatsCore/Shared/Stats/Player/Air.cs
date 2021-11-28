@@ -2,9 +2,9 @@
 {
 	public static class AirData
     {
-		public static readonly float default_SuffocationRecoverTime = 4f;
-		public static readonly float default_SuffocationTime = 8f;
-		public static readonly float default_O2UnitsPerSecondSurface = 30f;
+		public const float default_SuffocationRecoverTime = 4f;
+		public const float default_SuffocationTime = 8f;
+		public const float default_O2UnitsPerSecondSurface = 30f;
 
 
 
@@ -20,24 +20,6 @@
 		{
 			get { return Player.main.GetOxygenPerBreath(BreathPeriod, (int)Player.main.GetDepthClass()); }
 			set { newOxygenPerBreath = value; }
-		}
-
-		public static float SuffocationTime
-		{
-			get { return Player.main.suffocationTime; }
-			set { Player.main.suffocationTime = value; }
-		}
-
-		public static float SuffocationRecoveryTime
-		{
-			get { return Player.main.suffocationRecoveryTime; }
-			set { Player.main.suffocationRecoveryTime = value; }
-		}
-
-		public static float O2UnitsPerSecondSurface
-		{
-			get { return Player.main.oxygenMgr.oxygenUnitsPerSecondSurface; }
-			set { Player.main.oxygenMgr.oxygenUnitsPerSecondSurface = value; }
 		}
 	}
 }
